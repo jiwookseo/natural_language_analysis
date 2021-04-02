@@ -164,3 +164,4 @@ Thumbs.db #thumbnail cache on Windows
 gcp.ipynb
 data/
 gcp_nlp.ipynb
+*.json
