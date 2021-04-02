@@ -22,10 +22,11 @@ class Tda:
             self.json = self.api_response.__class__.to_json(self.api_response) 
             self.result = json.loads(self.json)
         # load existing result
-        else:
-            with open(f"data/{0}.json", "r", encoding="UTF-8") as f:
+        elif path:
+            with open(path, "r", encoding="UTF-8") as f:
                 self.result = json.load(f)
-        
+        else:
+            raise ValueError('text & path neither can be None')
         # extract pandas Dataframe
         self.sentences = self.get_sentences()
         self.tokens = self.get_tokens()
